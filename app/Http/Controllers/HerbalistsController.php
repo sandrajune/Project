@@ -24,13 +24,15 @@ class HerbalistsController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required|string|max:255',
+            'firstname' => 'required|string|max:255',
+            'lastname' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:herbalists',
             'password' => 'required|string|min:8|confirmed',
         ]);
 
         $herbalist = new Herbalist;
-        $herbalist->name = $request->name;
+        $herbalist->firstname = $request->firstname;
+        $herbalist->lastname = $request->lastname;
         $herbalist->email = $request->email;
         $herbalist->password = bcrypt($request->password);
         $herbalist->save();
@@ -59,7 +61,8 @@ class HerbalistsController extends Controller
             'email' => 'required|string|email|max:255|unique:herbalists,email,' . $herbalist->id,
         ]);
 
-        $herbalist->name = $request->name;
+        $herbalist->firstname = $request->firstname;
+        $herbalist->lastname = $request->lastname;
         $herbalist->email = $request->email;
         if ($request->filled('password')) {
             $request->validate([
