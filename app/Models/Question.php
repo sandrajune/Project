@@ -9,11 +9,20 @@ class Question extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['content', 'user_id'];
+    protected $fillable = ['herbalist_id', 'topic_id', 'title', 'content'];
 
     public function herbalist()
     {
-        return $this->belongsTo(Herbalist::class, 'user_id');
+        return $this->belongsTo(Herbalist::class);
+    }
+
+    public function topic()
+    {
+        return $this->belongsTo(Topic::class);
+    }
+
+    public function answers()
+    {
+        return $this->hasMany(Answer::class);
     }
 }
-

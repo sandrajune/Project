@@ -1,16 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="card">
-    <div class="card-header">
-        Remedies
-    </div>
-    <div class="card-body">
-        <ul class="list-group list-group-flush">
-            @foreach ($remedies as $remedy)
-                <li class="list-group-item">{{ $remedy['name'] }}: {{ $remedy['description'] }}</li>
-            @endforeach
-        </ul>
-    </div>
+<div class="container">
+    <h1>Remedies</h1>
+    <ul class="list-group">
+        @foreach ($remedies as $remedy)
+            <li class="list-group-item">{{ $remedy['name'] }}</li>
+        @endforeach
+    </ul>
 </div>
 @endsection
+

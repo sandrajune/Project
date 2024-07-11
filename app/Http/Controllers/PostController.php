@@ -3,48 +3,33 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\Topic;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
-    public function index()
+    public function create(Topic $topic)
     {
-        $posts = Post::all();
-        return view('posts.index', compact('posts'));
+        return view('posts.create', compact('topic'));
     }
 
-    public function create()
+    public function store(Request $request, Topic $topic)
     {
-        return view('posts.create');
-    }
+        $request->validate([
+            'content' => 'required|string',
+        ]);
 
-    public function store(Request $request)
-    {
-        $request->validate(['content' => 'required']);
-        Post::create($request->all());
-        return redirect()->route('posts.index');
-    }
+        $topic->posts()->create([
+            'herbalist_id' => auth()->id(),
+            'content' => $request->content,
+        ]);
 
-    public function show(Post $post)
-    {
-        return view('posts.show', compact('post'));
-    }
-
-    public function edit(Post $post)
-    {
-        return view('posts.edit', compact('post'));
-    }
-
-    public function update(Request $request, Post $post)
-    {
-        $request->validate(['content' => 'required']);
-        $post->update($request->all());
-        return redirect()->route('posts.index');
+        return redirect()->route('topics.show', $topic)->with('success', 'Post created successfully.');
     }
 
     public function destroy(Post $post)
     {
         $post->delete();
-        return redirect()->route('posts.index');
+        return redirect()->route('topics.show', $post->topic)->with('success', 'Post deleted successfully.');
     }
 }
