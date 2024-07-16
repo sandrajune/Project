@@ -4,10 +4,10 @@
         Herbal Care
     </x-slot>
 
- <div class="container">
-    <h4>Welcome to Herbal World</h4>
+ <div class="container text-2xl font-bold text-green-800 mb-4">
+    <h5> Herbs and Remedies for natural wellbeing and connect with users of herbal medicine</h5>
  </div>
- 
+
  <x-slot:scripts>
     <script>
         alert('script area')
