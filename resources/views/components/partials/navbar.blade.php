@@ -15,22 +15,14 @@
         <li class="nav-item active">
           <a class="nav-link" href="{{url('/')}}">Profile<span class="sr-only">(current)</span></a>
         </li>
-
-
        
       </ul>
-
-      <div class="flex items-center space-x-4">
-        <a href="#" class="text-white text-lg">Log in</a>
-        <a href="#" class="text-white text-lg">Register</a>
-      </div>
-    
      
     </div>
 
     <div>
         <input type="text" placeholder="Search" class="p-2 rounded border border-gray-300">
-      </div>
+     </div>
 
   </nav>
 
