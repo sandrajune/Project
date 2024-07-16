@@ -5,7 +5,10 @@
     </x-slot>
 
  <div class="container text-2xl font-bold text-green-800 mb-4">
-    <h5> Herbs and Remedies for natural wellbeing and connect with users of herbal medicine</h5>
+
+   
+
+    <h5>Connect with Users of Herbal Medicine and Discover Herbs and Remedies</h5>
  </div>
 
  <x-slot:scripts>

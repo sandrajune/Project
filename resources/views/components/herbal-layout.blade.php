@@ -10,11 +10,14 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css">
 
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @vite(['resources/css/app.css','resources/scss/app.scss', 'resources/js/app.js'])
 
 </head>
+
+
 <body class="body">
-    <x-partials.navbar/>
+    <x-partials.navbar>
+    
     <div>
         {{$slot}}
     </div>
@@ -26,11 +29,11 @@
 
        <main class="container mx-auto mt-8">
         <div class="bg-white p-6 rounded shadow-md">
-          <h1 class="text-2xl font-bold mb-4">Herbs and Remedies</h1>
+          <h1 class="text-2xl font-bold text-green-800 mb-4">Herbs and Remedies</h1>
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <!-- Example Item -->
-            <div class="bg-gray-100 p-4 rounded shadow">
-              <h2 class="text-xl font-bold mb-2">Herb Name</h2>
+            <div class="p-4 bg-green-100 rounded shadow">
+              <h2 class="text-lg font-bold text-green-900">Herb Name</h2>
               <p>Description of the herb and its remedies.</p>
             </div>
             <!-- Add more items here -->
