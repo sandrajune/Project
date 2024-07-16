@@ -42,8 +42,14 @@
         <input type="text" placeholder="Search" class="p-2 rounded border border-gray-300">
      </div>
 
+     <div class="flex items-center space-x-4">
+      <a href="#" class="text-white text-lg">Log in</a>
+      <a href="#" class="text-white text-lg">Register</a>
+    </div>
+    
+
   </nav>
-  
+
     
     <div>
         {{$slot}}
